@@ -346,9 +346,9 @@
 
         .queue-container {
             position: fixed;
-            right: 380px;
+            right: 310px;
             bottom: 0;
-            width: 400px;
+            width: 300px;
             height: 400px;
             background: #1a1a1a;
             border-left: 1px solid #333;
