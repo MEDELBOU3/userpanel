@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="user-panel" id="userPanel">
+        <div class="resizer" id="resizer"></div>
+        <button class="close-panel" onclick="closeUserPanel()">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="user-info">
+            <img id="userImage" alt="Profile Picture">
+            <h3 id="userName"></h3>
+            <p id="userEmail"></p>
+            <p id="userAge"></p>
+            <button class="butn" onclick="logout()">Logout</button>
+        </div>
+
+        <div class="music-content">
+            <div class="music-content">
+                <div class="tabs-container">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="home">Home</button>
+                        <button class="tab-btn" data-tab="trending">Trending</button>
+                        <button class="tab-btn" data-tab="playlists">Playlists</button>
+                        <button class="tab-btn" data-tab="library">Library</button>
+                    </div>
+                </div>
+        
+                <div class="category-chips" id="categoryChips">
+                    <!-- Categories will be populated dynamically -->
+                </div>
+        
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search music..." id="searchInput">
+                </div>
+        
+                <div class="loading-spinner" id="loadingSpinner">
+                    <div class="spinner"></div>
+                </div>
+        
+                <div id="contentContainer">
+                    <!-- Dynamic content will be loaded here -->
+                </div>
+        
+                <div class="queue-container" id="queueContainer">
+                    <div class="queue-header">
+                        <h3>Queue</h3>
+                        <button class="action-btn" onclick="toggleQueue()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="queue-list" id="queueList"></div>
+                </div>
+           
+            <div class="music-list" id="musicList"></div>
+        </div>
+
+
+        <div class="video-player-container" id="videoPlayerContainer">
+            <div class="player-header">
+                <div class="player-controls">
+                    <button class="player-btn" onclick="previousTrack()">
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button class="player-btn" onclick="togglePlay()" id="playPauseBtn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="player-btn" onclick="nextTrack()">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                    <div class="volume-control">
+                        <i class="fas fa-volume-up"></i>
+                        <input type="range" class="volume-slider" min="0" max="100" value="100" id="volumeSlider">
+                    </div>
+                </div>
+                <button class="expand-btn" onclick="toggleExpand()">
+                    <i class="fas fa-expand" id="expandIcon"></i>
+                </button>
+            </div>
+            <div id="videoPlayer"></div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <div class="time-display">
+                    <span id="currentTime">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
